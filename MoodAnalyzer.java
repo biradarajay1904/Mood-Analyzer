@@ -1,19 +1,27 @@
 package com.mood;
 
 public class MoodAnalyzer {
+	String message;
+
 	public static void main(String[] args) {
 		MoodAnalyzer moodAnalyser = new MoodAnalyzer();
-		String happyMood = moodAnalyser.analyseMood("I am in Happy Mood");
+		String happyMood = moodAnalyser.analyseMood();
 		System.out.println("My mood is :" + happyMood);
-		String sadMood = moodAnalyser.analyseMood("I am in Sad Mood");
+		String sadMood = moodAnalyser.analyseMood();
 		System.out.println("My Mood is :" + sadMood);
 	}
 
-	String analyseMood(String message) {
+	public MoodAnalyzer(String message) {
+		this.message = message;
+	}
+
+	public MoodAnalyzer() {
+	}
+
+	public String analyseMood() {
 		if (message.toLowerCase().contains("sad"))
 			return "SAD";
-		else if (message.toLowerCase().contains("happy"))
+		else
 			return "HAPPY";
-		return message;
 	}
 }
