@@ -1,6 +1,7 @@
 package com.mood;
 
 public class MoodAnalyzer {
+
 	String message;
 
 	public static void main(String[] args) {
@@ -19,9 +20,13 @@ public class MoodAnalyzer {
 	}
 
 	public String analyseMood() {
-		if (message.toLowerCase().contains("sad"))
-			return "SAD";
-		else
+		try {
+			if (message.toLowerCase().contains("sad"))
+				return "SAD";
+			else
+				return "HAPPY";
+		} catch (Exception e) {
 			return "HAPPY";
+		}
 	}
 }
